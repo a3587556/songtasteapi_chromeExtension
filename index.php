@@ -38,19 +38,21 @@ function postData($strURL,$sid)
 	$post_data=substr($o,0,-1); 
 	//print_r($post_data);
 
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, 'http://songtaste.com/time.php'); 
-	curl_setopt($ch, CURLOPT_TIMEOUT, 1); 
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-	curl_setopt($ch, CURLOPT_HEADER, 0);  
-	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+	//$ch = curl_init();
+	//curl_setopt($ch, CURLOPT_URL, 'http://songtaste.com/time.php'); 
+	//curl_setopt($ch, CURLOPT_TIMEOUT, 1); 
+	//curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+	//curl_setopt($ch, CURLOPT_HEADER, 0);  
+	//curl_setopt($ch, CURLOPT_POST, 1);
+	//curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
 	
-	$output = curl_exec($ch);
-	curl_close($ch);
+	//$output = curl_exec($ch);
+	//curl_close($ch);
 	
 	//print_r($output);
-	echo $output;
+	//echo $output;
+	$tUrl = "http://songtaste.com/time.php?".$post_data;
+        print_r(file_get_contents($tUrl));
 }
 
 function getSongUrl($strURL,$sid)
